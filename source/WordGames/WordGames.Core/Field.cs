@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Sandbox
+namespace WordGames.Core
 {
     public class Field
     {

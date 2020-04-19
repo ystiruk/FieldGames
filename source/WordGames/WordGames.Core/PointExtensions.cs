@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sandbox
+namespace WordGames.Core
 {
     public static class PointExtensions
     {

@@ -1,4 +1,4 @@
-﻿namespace Sandbox
+﻿namespace WordGames.Core
 {
     public interface IWordProvider
     {

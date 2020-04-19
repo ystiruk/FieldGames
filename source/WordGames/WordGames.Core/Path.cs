@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Sandbox
+namespace WordGames.Core
 {
     public class Path : IEnumerable<Point>
     {

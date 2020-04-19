@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sandbox
+namespace WordGames.Core
 {
     public struct Point : IEquatable<Point>
     {

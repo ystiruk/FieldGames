@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{5B3790E4-16BF-443B-9016-F9F8318B817C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordGames.Core", "WordGames.Core\WordGames.Core.csproj", "{DC7CDA0A-FC2B-4CE7-8CE2-D6B6A54E1EF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5B3790E4-16BF-443B-9016-F9F8318B817C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B3790E4-16BF-443B-9016-F9F8318B817C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B3790E4-16BF-443B-9016-F9F8318B817C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC7CDA0A-FC2B-4CE7-8CE2-D6B6A54E1EF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC7CDA0A-FC2B-4CE7-8CE2-D6B6A54E1EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC7CDA0A-FC2B-4CE7-8CE2-D6B6A54E1EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC7CDA0A-FC2B-4CE7-8CE2-D6B6A54E1EF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

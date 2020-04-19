@@ -1,6 +1,6 @@
-﻿namespace Sandbox
+﻿namespace WordGames.Core
 {
-    class AnyWordProvider : IWordProvider
+    public class AnyWordProvider : IWordProvider
     {
         public bool Contains(string word)
         {
