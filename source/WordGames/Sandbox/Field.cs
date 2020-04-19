@@ -52,9 +52,7 @@ namespace Sandbox
 
                         if (!path.Contains(neighbours[i]))
                         {
-                            var p = ((Path)path.Clone());
-                            p.Add(neighbours[i]);
-                            newPaths.Add(p);
+                            newPaths.Add(path.Extend(neighbours[i]));
                         }
                     }
                 }

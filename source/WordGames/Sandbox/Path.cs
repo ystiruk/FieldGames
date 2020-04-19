@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Sandbox
 {
-    public class Path : IEnumerable<Point>, ICloneable
+    public class Path : IEnumerable<Point>
     {
         private List<Point> _points;
 
@@ -20,6 +20,12 @@ namespace Sandbox
 
         public void Add(Point point) { _points.Add(point); }
         public bool Contains(Point point) { return _points.Contains(point); }
+        public Path Extend(Point point)
+        {
+            var extendedPath = new Path(_points);
+            extendedPath.Add(point);
+            return extendedPath;
+        }
 
         #region IEnumerable<Point> members
 
@@ -32,11 +38,6 @@ namespace Sandbox
         {
             return _points.GetEnumerator();
         }
-        #endregion
-
-        #region ICloneable members
-        
-        public object Clone() { return new Path(_points); }
         #endregion
 
         public override string ToString()
