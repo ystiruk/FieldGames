@@ -13,7 +13,7 @@ namespace WordGames.Core
         public int Size { get { return _field.GetLength(0); } }
         public char this[int row, int column] { get { return _field[row, column]; } }
 
-        public static Field From(string path, IWordProvider wordProvider)
+        public static Field From(string path, IWordProvider wordProvider = null)
         {
             var lines = File.ReadAllLines(path, Encoding.UTF8);
             return new Field(lines, wordProvider);
@@ -23,6 +23,9 @@ namespace WordGames.Core
         {
             if (lines == null || lines.Length < 2 || lines.Length != lines[0].Length)
                 throw new ArgumentException();
+
+            if (wordProvider == null)
+                wordProvider = new AnyWordProvider();
 
             _wordProvider = wordProvider;
 
@@ -87,6 +90,22 @@ namespace WordGames.Core
                 letters[i] = _field[path[i].X, path[i].Y];
             
             return new string(letters);
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            
+            for (int i = 0; i < Size; i++)
+            {
+                for (int j = 0; j < Size; j++)
+                {
+                    sb.Append(_field[i, j]);
+                }
+                sb.Append(Environment.NewLine);
+            }
+
+            return sb.ToString();
         }
     }
 }

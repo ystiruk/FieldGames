@@ -12,11 +12,12 @@ namespace Sandbox
             Console.OutputEncoding = Encoding.UTF8;
 
             WordDictionary russianNouns = new WordDictionary(@"..\..\..\..\..\data\nouns.txt");
-            AnyWordProvider anyWords = new AnyWordProvider();
 
             Field field = Field.From(@"..\..\..\..\..\data\fields\field1.txt", russianNouns);
 
-            foreach (var path in field.GetAllPaths(Point.Zero, SearchDirection.All, 5))
+            Console.WriteLine(field);
+
+            foreach (var path in field.GetAllPaths(Point.Zero, SearchDirection.All))
             {
                 var word = field.GetWord(path);
                 Console.WriteLine(word);
