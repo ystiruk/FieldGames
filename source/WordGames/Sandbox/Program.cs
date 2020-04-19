@@ -7,20 +7,31 @@ namespace Sandbox
 {
     class Program
     {
+        static string data = "ниваптетьранмозкоысаерьтп";//"слмзоваон";
+
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
 
             WordDictionary russianNouns = new WordDictionary(@"..\..\..\..\..\data\nouns.txt");
 
-            Field field = Field.From(@"..\..\..\..\..\data\fields\field1.txt", russianNouns);
+            //Field field = Field.FromFile(@"..\..\..\..\..\data\fields\field1.txt", russianNouns);
+            Field field = new Field(data, russianNouns);
 
             Console.WriteLine(field);
 
-            foreach (var path in field.GetAllPaths(Point.Zero, SearchDirection.All))
+            for (int i = 0; i < field.Size; i++)
             {
-                var word = field.GetWord(path);
-                Console.WriteLine(word);
+                for (int j = 0; j < field.Size; j++)
+                {
+                    var paths = field.GetAllPaths(new Point(i, j), SearchDirection.All);
+
+                    foreach (var path in paths)
+                    {
+                        var word = field.GetWord(path);
+                        Console.WriteLine(word);
+                    }
+                }
             }
 
             Console.WriteLine("-all-");

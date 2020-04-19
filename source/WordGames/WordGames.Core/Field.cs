@@ -13,7 +13,7 @@ namespace WordGames.Core
         public int Size { get { return _field.GetLength(0); } }
         public char this[int row, int column] { get { return _field[row, column]; } }
 
-        public static Field From(string path, IWordProvider wordProvider = null)
+        public static Field FromFile(string path, IWordProvider wordProvider = null)
         {
             var lines = File.ReadAllLines(path, Encoding.UTF8);
             return new Field(lines, wordProvider);
@@ -30,6 +30,24 @@ namespace WordGames.Core
             _wordProvider = wordProvider;
 
             int size = lines.Length;
+
+            _field = new char[size, size];
+            for (int i = 0; i < size; i++)
+                for (int j = 0; j < size; j++)
+                    _field[i, j] = lines[i][j];
+        }
+        public Field(string letters, IWordProvider wordProvider) //TODO: refactor
+        {
+            if (wordProvider == null)
+                wordProvider = new AnyWordProvider();
+
+            _wordProvider = wordProvider;
+
+            var size = (int)Math.Sqrt(letters.Length);
+
+            string[] lines = new string[size];
+            for (int i = 0; i < size; i++)
+                lines[i] = letters.Substring(i * size, size);
 
             _field = new char[size, size];
             for (int i = 0; i < size; i++)
