@@ -13,27 +13,12 @@ namespace Sandbox
 
             Field field = Field.From(@"..\..\..\..\..\data\fields\field1.txt");
 
-            //var field = CreateField(3);
-
-            //List<Path> paths;
-            //Traverse(field, Point.Zero, SearchDirection.All, out paths);
-
-            //foreach (var path in paths)
-            //{
-            //    var word = path.Select(p => ff[p.X, p.Y]);
-            //    Console.WriteLine(string.Join("", word));
-            //}
-
-            //BFS(field, 0, 0);
-
-            foreach (var path in field.GetAllPaths(Point.Zero, SearchDirection.All))
+            foreach (var path in field.GetAllPaths(Point.Zero, SearchDirection.All, 2))
             {
                 var word = path.Select(p => field[p.X, p.Y]);
                 Console.WriteLine(string.Join("", word));
             }
 
-            //Console.WriteLine(paths.Count);
-            //Console.WriteLine(paths.Count * field.Length);
             Console.ReadLine();
         }
 

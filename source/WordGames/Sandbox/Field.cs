@@ -41,11 +41,10 @@ namespace Sandbox
             yield return trivialPath;
 
             List<Path> oldPaths = new List<Path>() { trivialPath };
-            List<Path> newPaths = null;
             
             while (true)
             { 
-                newPaths = new List<Path>();
+                List<Path> newPaths = new List<Path>();
                 foreach (var path in oldPaths)
                 {
                     var neighbours = path.Last.GetNeighbours(searchDirection);
@@ -66,7 +65,7 @@ namespace Sandbox
                 foreach (var nPath in newPaths)
                     yield return nPath;
                 
-                if (newPaths.Count == 0)
+                if (newPaths.Count == 0 || newPaths[0].Length >= maxDepth)
                     yield break;
 
                 oldPaths = newPaths;
