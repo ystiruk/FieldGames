@@ -12,7 +12,7 @@ namespace Sandbox
 
             Field field = Field.From(@"..\..\..\..\..\data\fields\field1.txt");
 
-            foreach (var path in field.GetAllPaths(Point.Zero, SearchDirection.All, 5))
+            foreach (var path in field.GetAllPaths(Point.Zero, SearchDirection.All))
             {
                 var word = field.GetWord(path);
                 Console.WriteLine(word);

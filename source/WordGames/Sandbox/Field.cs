@@ -37,10 +37,7 @@ namespace Sandbox
         }
         public IEnumerable<Path> GetAllPaths(Point start, SearchDirection searchDirection, int maxDepth)
         {
-            var trivialPath = new Path() { start };
-            yield return trivialPath;
-
-            List<Path> oldPaths = new List<Path>() { trivialPath };
+            List<Path> oldPaths = new List<Path>() { new Path() { start } };
             
             while (true)
             { 
@@ -50,7 +47,7 @@ namespace Sandbox
                     var neighbours = path.Last.GetNeighbours(searchDirection);
                     for (int i = 0; i < neighbours.Length; i++)
                     {
-                        if (!neighbours[i].IsInside(Size, Size))
+                        if (!neighbours[i].IsInsideField(Size, Size))
                             continue;
 
                         if (!path.Contains(neighbours[i]))

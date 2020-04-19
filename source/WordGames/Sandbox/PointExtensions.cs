@@ -55,7 +55,7 @@ namespace Sandbox
             return neighbours;
         }
 
-        public static bool IsInside(this Point point, int width, int height)
+        public static bool IsInsideField(this Point point, int width, int height)
         {
             return point.X >= 0 && point.X < width && point.Y >= 0 && point.Y < height;
         }
