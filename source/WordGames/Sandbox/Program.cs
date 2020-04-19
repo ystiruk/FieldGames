@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using WordGames.Core;
@@ -12,27 +13,45 @@ namespace Sandbox
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
+            Console.InputEncoding = Encoding.Unicode;
 
             WordDictionary russianNouns = new WordDictionary(@"..\..\..\..\..\data\nouns.txt");
 
             //Field field = Field.FromFile(@"..\..\..\..\..\data\fields\field1.txt", russianNouns);
+            Console.Write("Letters: ");
+            data = Console.ReadLine();
+
             Field field = new Field(data, russianNouns);
 
             Console.WriteLine(field);
 
+            HashSet<string> unique = new HashSet<string>();
+            int cc = 1;
             for (int i = 0; i < field.Size; i++)
             {
                 for (int j = 0; j < field.Size; j++)
                 {
+                    Console.WriteLine($"{i * field.Size + j}/{field.Size * field.Size}");
+
                     var paths = field.GetAllPaths(new Point(i, j), SearchDirection.All);
 
                     foreach (var path in paths)
                     {
                         var word = field.GetWord(path);
-                        Console.WriteLine(word);
+
+                        //unique.Add(word);
+                        if (unique.Add(word))
+                            Console.WriteLine(cc++ + ") " + word);
+
                         //Console.WriteLine(field.VisualizeWord(path));
                     }
                 }
+            }
+
+            Console.WriteLine("Top10:");
+            foreach (var item in unique.OrderByDescending(x => x.Length).Take(10))
+            {
+                Console.WriteLine(item);
             }
 
             Console.WriteLine("-all-");
