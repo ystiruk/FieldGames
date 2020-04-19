@@ -71,5 +71,15 @@ namespace Sandbox
                 oldPaths = newPaths;
             }
         }
+
+        public string GetWord(Path path)
+        {
+            char[] letters = new char[path.Length];
+            
+            for (int i = 0; i < path.Length; i++)
+                letters[i] = _field[path[i].X, path[i].Y];
+            
+            return new string(letters);
+        }
     }
 }

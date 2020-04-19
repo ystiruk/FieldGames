@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace Sandbox
@@ -13,10 +12,10 @@ namespace Sandbox
 
             Field field = Field.From(@"..\..\..\..\..\data\fields\field1.txt");
 
-            foreach (var path in field.GetAllPaths(Point.Zero, SearchDirection.All, 2))
+            foreach (var path in field.GetAllPaths(Point.Zero, SearchDirection.All, 5))
             {
-                var word = path.Select(p => field[p.X, p.Y]);
-                Console.WriteLine(string.Join("", word));
+                var word = field.GetWord(path);
+                Console.WriteLine(word);
             }
 
             Console.ReadLine();
