@@ -1,71 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 
 namespace Sandbox
 {
-    public class Field
-    {
-        private char[,] _field;
-
-        public int Size { get { return _field.GetLength(0); } }
-        public char this[int row, int column] { get { return _field[row, column]; } }
-
-        public static Field From(string path)
-        {
-            var lines = File.ReadAllLines(path, Encoding.UTF8);
-            return new Field(lines);
-        }
-
-        public Field(string[] lines)
-        {
-            if (lines == null || lines.Length < 2 || lines.Length != lines[0].Length)
-                throw new ArgumentException();
-
-            int size = lines.Length;
-
-            _field = new char[size, size];
-            for (int i = 0; i < size; i++)
-                for (int j = 0; j < size; j++)
-                    _field[i, j] = lines[i][j];
-        }
-
-        //public override string ToString()
-        //{
-        //    for (int i = 0; i < Size; i++)
-        //        for (int j = 0; j < sSize; j++)
-        //            _field[i, j]
-        //}
-    }
-
     class Program
     {
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
 
-            Field ff = Field.From(@"..\..\..\..\..\data\fields\field1.txt");
+            Field field = Field.From(@"..\..\..\..\..\data\fields\field1.txt");
 
-            var field = CreateField(3);
-            
-            List<Path> paths;
-            Traverse(field, Point.Zero, PointExtensions.Direction.All, out paths);
+            //var field = CreateField(3);
 
-            foreach (var path in paths)
+            //List<Path> paths;
+            //Traverse(field, Point.Zero, SearchDirection.All, out paths);
+
+            //foreach (var path in paths)
+            //{
+            //    var word = path.Select(p => ff[p.X, p.Y]);
+            //    Console.WriteLine(string.Join("", word));
+            //}
+
+            //BFS(field, 0, 0);
+
+            foreach (var path in field.GetAllPaths(Point.Zero, SearchDirection.All))
             {
-                var word = path.Select(p => ff[p.X, p.Y]);
+                var word = path.Select(p => field[p.X, p.Y]);
                 Console.WriteLine(string.Join("", word));
             }
 
-            //BFS(field, 0, 0);
-            Console.WriteLine(paths.Count);
-            Console.WriteLine(paths.Count * field.Length);
+            //Console.WriteLine(paths.Count);
+            //Console.WriteLine(paths.Count * field.Length);
             Console.ReadLine();
         }
 
-        static void Traverse(int[,] field, Point start, PointExtensions.Direction dir, out List<Path> paths)
+        static void Traverse(int[,] field, Point start, SearchDirection dir, out List<Path> paths)
         {
             paths = new List<Path>();
             paths.Add(new Path() { start });
@@ -148,7 +120,7 @@ namespace Sandbox
                     //previsit
                     Console.WriteLine(p);
 
-                    var next = p.GetNeighbours(PointExtensions.Direction.Cross);
+                    var next = p.GetNeighbours(SearchDirection.Cross);
                     for (int i = 0; i < next.Length; i++)
                     {
                         if (IsPointInsideField(next[i], size) && visited[next[i].Y, next[i].X] != 1)

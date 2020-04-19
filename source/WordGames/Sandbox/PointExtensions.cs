@@ -2,32 +2,17 @@
 
 namespace Sandbox
 {
-    //class Field
-    //{
-    //    public Field()
-    //    {
-
-    //    }
-    //}
-
     public static class PointExtensions
     {
-        public enum Direction
-        {
-            Cross,
-            Diag,
-            All
-        }
-
-        public static Point[] GetNeighbours(this Point point, Direction direction)
+        public static Point[] GetNeighbours(this Point point, SearchDirection direction)
         {
             switch (direction)
             {
-                case Direction.Cross:
+                case SearchDirection.Cross:
                     return point.GetCrossNeighbours();
-                case Direction.Diag:
+                case SearchDirection.Diag:
                     return point.GetDiagonalNeighbours();
-                case Direction.All:
+                case SearchDirection.All:
                     return point.GetAllNeighbours();
                 default:
                     throw new ArgumentException(nameof(direction));
@@ -68,6 +53,11 @@ namespace Sandbox
             Array.Copy(diagPoints, 0, neighbours, 4, diagPoints.Length);
 
             return neighbours;
+        }
+
+        public static bool IsInside(this Point point, int width, int height)
+        {
+            return point.X >= 0 && point.X < width && point.Y >= 0 && point.Y < height;
         }
     }
 }
