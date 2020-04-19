@@ -30,6 +30,7 @@ namespace Sandbox
                     {
                         var word = field.GetWord(path);
                         Console.WriteLine(word);
+                        //Console.WriteLine(field.VisualizeWord(path));
                     }
                 }
             }

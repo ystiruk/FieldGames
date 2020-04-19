@@ -109,6 +109,22 @@ namespace WordGames.Core
             
             return new string(letters);
         }
+        public string VisualizeWord(Path path)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < Size; i++)
+            {
+                for (int j = 0; j < Size; j++)
+                {
+                    var c = (path.Contains(new Point(i, j)) ? _field[i, j] : ' ');
+                    sb.Append(c);
+                }
+                sb.Append(Environment.NewLine);
+            }
+
+            return sb.ToString();
+        }
 
         public override string ToString()
         {
