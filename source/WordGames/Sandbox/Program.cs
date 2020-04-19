@@ -11,15 +11,17 @@ namespace Sandbox
             Console.OutputEncoding = Encoding.UTF8;
 
             WordDictionary russianNouns = new WordDictionary(@"..\..\..\..\..\data\nouns.txt");
+            AnyWordProvider anyWords = new AnyWordProvider();
 
             Field field = Field.From(@"..\..\..\..\..\data\fields\field1.txt", russianNouns);
 
-            foreach (var path in field.GetAllPaths(Point.Zero, SearchDirection.All))
+            foreach (var path in field.GetAllPaths(Point.Zero, SearchDirection.All, 5))
             {
                 var word = field.GetWord(path);
                 Console.WriteLine(word);
             }
 
+            Console.WriteLine("-all-");
             Console.ReadLine();
         }
 
@@ -58,7 +60,7 @@ namespace Sandbox
             while (newWave.Count > 0);
         }
 
-        public static bool IsPointInsideField(Point point, int size)
+        static bool IsPointInsideField(Point point, int size)
         {
             return point.X >= 0 && point.X < size && point.Y >= 0 && point.Y < size;
         }

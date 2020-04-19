@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace Sandbox
@@ -22,6 +23,11 @@ namespace Sandbox
         public bool Contains(string word)
         {
             return Words.Contains(word);
+        }
+
+        public bool StartsWith(string prefix)
+        {
+            return Words.Any(w => w.StartsWith(prefix));
         }
     }
 }

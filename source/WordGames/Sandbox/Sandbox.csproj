@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnyWordProvider.cs" />
     <Compile Include="Field.cs" />
     <Compile Include="IWordProvider.cs" />
     <Compile Include="Path.cs" />

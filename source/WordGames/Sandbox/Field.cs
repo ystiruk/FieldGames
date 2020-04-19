@@ -40,10 +40,14 @@ namespace Sandbox
         }
         public IEnumerable<Path> GetAllPaths(Point start, SearchDirection searchDirection, int maxDepth)
         {
+            return this.GetAllPaths(start, searchDirection, maxDepth, _wordProvider);
+        }
+        private IEnumerable<Path> GetAllPaths(Point start, SearchDirection searchDirection, int maxDepth, IWordProvider wordProvider)
+        {
             List<Path> oldPaths = new List<Path>() { new Path() { start } };
-            
+
             while (true)
-            { 
+            {
                 List<Path> newPaths = new List<Path>();
                 foreach (var path in oldPaths)
                 {
@@ -55,14 +59,19 @@ namespace Sandbox
 
                         if (!path.Contains(neighbours[i]))
                         {
-                            newPaths.Add(path.Extend(neighbours[i]));
+                            var nPath = path.Extend(neighbours[i]);
+                            if (wordProvider.StartsWith(this.GetWord(nPath)))
+                                newPaths.Add(nPath);
                         }
                     }
                 }
 
                 foreach (var nPath in newPaths)
-                    yield return nPath;
-                
+                {
+                    if (wordProvider.Contains(this.GetWord(nPath)))
+                        yield return nPath;
+                }
+
                 if (newPaths.Count == 0 || newPaths[0].Length >= maxDepth)
                     yield break;
 
