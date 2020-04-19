@@ -10,7 +10,9 @@ namespace Sandbox
         {
             Console.OutputEncoding = Encoding.UTF8;
 
-            Field field = Field.From(@"..\..\..\..\..\data\fields\field1.txt");
+            WordDictionary russianNouns = new WordDictionary(@"..\..\..\..\..\data\nouns.txt");
+
+            Field field = Field.From(@"..\..\..\..\..\data\fields\field1.txt", russianNouns);
 
             foreach (var path in field.GetAllPaths(Point.Zero, SearchDirection.All))
             {

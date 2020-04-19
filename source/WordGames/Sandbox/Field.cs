@@ -8,20 +8,23 @@ namespace Sandbox
     public class Field
     {
         private char[,] _field;
+        private readonly IWordProvider _wordProvider;
 
         public int Size { get { return _field.GetLength(0); } }
         public char this[int row, int column] { get { return _field[row, column]; } }
 
-        public static Field From(string path)
+        public static Field From(string path, IWordProvider wordProvider)
         {
             var lines = File.ReadAllLines(path, Encoding.UTF8);
-            return new Field(lines);
+            return new Field(lines, wordProvider);
         }
 
-        public Field(string[] lines)
+        public Field(string[] lines, IWordProvider wordProvider)
         {
             if (lines == null || lines.Length < 2 || lines.Length != lines[0].Length)
                 throw new ArgumentException();
+
+            _wordProvider = wordProvider;
 
             int size = lines.Length;
 
