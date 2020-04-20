@@ -59,5 +59,13 @@ namespace WordGames.Core.Tests
 
             Assert.AreEqual(point, Point.Zero);
         }
+
+        [TestMethod]
+        public void PointZeroEqualsToPointWithDefaultConstructor()
+        {
+            Point point = new Point();
+
+            Assert.AreEqual(point, Point.Zero);
+        }
     }
 }
