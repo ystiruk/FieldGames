@@ -23,7 +23,7 @@ namespace WordGames.Core.Tests
         {
             Point point = Point.Zero;
 
-            int neighboursNumber = point.GetNeighbours(SearchDirection.Diag).Length;
+            int neighboursNumber = point.GetNeighbours(SearchDirection.Diagonal).Length;
             Assert.AreEqual(neighboursNumber, 4);
         }
 
@@ -53,7 +53,7 @@ namespace WordGames.Core.Tests
             Point p = Point.Zero;
             Point[] expectedNeighbours = { new Point(p.X - 1, p.Y - 1), new Point(p.X + 1, p.Y - 1), new Point(p.X - 1, p.Y + 1), new Point(p.X + 1, p.Y + 1) };
 
-            Point[] actualNeighbours = p.GetNeighbours(SearchDirection.Diag);
+            Point[] actualNeighbours = p.GetNeighbours(SearchDirection.Diagonal);
 
             AssertPointSequencesAreEqual(expectedNeighbours, actualNeighbours);
         }

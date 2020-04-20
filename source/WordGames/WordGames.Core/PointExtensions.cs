@@ -10,7 +10,7 @@ namespace WordGames.Core
             {
                 case SearchDirection.Cross:
                     return point.GetCrossNeighbours();
-                case SearchDirection.Diag:
+                case SearchDirection.Diagonal:
                     return point.GetDiagonalNeighbours();
                 case SearchDirection.All:
                     return point.GetAllNeighbours();

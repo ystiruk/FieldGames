@@ -3,7 +3,7 @@
     public enum SearchDirection
     {
         Cross,
-        Diag,
+        Diagonal,
         All
     }
 }
