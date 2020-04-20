@@ -4,7 +4,7 @@ using System.Linq;
 namespace WordGames.Core.Tests
 {
     [TestClass]
-    public class PathTest
+    public class PathTests
     {
         [TestMethod]
         public void DefaultConstructorCreatesEmptyPath()

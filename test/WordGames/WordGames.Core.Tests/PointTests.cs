@@ -3,7 +3,7 @@
 namespace WordGames.Core.Tests
 {
     [TestClass]
-    public class PointTest
+    public class PointTests
     {
         [TestMethod]
         public void PointConstructor()

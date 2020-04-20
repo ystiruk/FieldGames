@@ -49,9 +49,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PathTest.cs" />
-    <Compile Include="PointExtensionsTest.cs" />
-    <Compile Include="PointTest.cs" />
+    <Compile Include="FieldTests.cs" />
+    <Compile Include="PathTests.cs" />
+    <Compile Include="PointExtensionsTests.cs" />
+    <Compile Include="PointTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

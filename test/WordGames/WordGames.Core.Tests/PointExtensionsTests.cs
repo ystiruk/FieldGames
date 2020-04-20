@@ -1,13 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace WordGames.Core.Tests
 {
     [TestClass]
-    public class PointExtensionsTest
+    public class PointExtensionsTests
     {
         [TestMethod]
         public void NumberOfNeighboursForCrossDirectionIs4()
