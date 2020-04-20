@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordGames.Core", "WordGames.Core\WordGames.Core.csproj", "{DC7CDA0A-FC2B-4CE7-8CE2-D6B6A54E1EF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordGames.Core.Tests", "..\..\test\WordGames\WordGames.Core.Tests\WordGames.Core.Tests.csproj", "{712997D2-7228-4D86-B77E-06BFA22BA6CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F53B21B9-F2AB-4803-BD8A-43DA90DD6CE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +25,16 @@ Global
 		{DC7CDA0A-FC2B-4CE7-8CE2-D6B6A54E1EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC7CDA0A-FC2B-4CE7-8CE2-D6B6A54E1EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC7CDA0A-FC2B-4CE7-8CE2-D6B6A54E1EF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712997D2-7228-4D86-B77E-06BFA22BA6CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712997D2-7228-4D86-B77E-06BFA22BA6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712997D2-7228-4D86-B77E-06BFA22BA6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712997D2-7228-4D86-B77E-06BFA22BA6CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{712997D2-7228-4D86-B77E-06BFA22BA6CE} = {F53B21B9-F2AB-4803-BD8A-43DA90DD6CE0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8763DFF-6AFD-4A7B-A44F-85F8A15D1F85}
