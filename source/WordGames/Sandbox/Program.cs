@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using WordGames.Core;
+using System.Diagnostics;
 
 namespace Sandbox
 {
@@ -19,11 +20,14 @@ namespace Sandbox
 
             //Field field = Field.FromFile(@"..\..\..\..\..\data\fields\field1.txt", russianNouns);
             Console.Write("Letters: ");
-            data = Console.ReadLine();
+            //data = Console.ReadLine();
 
             Field field = new Field(data, russianNouns);
 
             Console.WriteLine(field);
+
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
 
             HashSet<string> unique = new HashSet<string>();
             int cc = 1;
@@ -31,8 +35,6 @@ namespace Sandbox
             {
                 for (int j = 0; j < field.Size; j++)
                 {
-                    Console.WriteLine($"{i * field.Size + j}/{field.Size * field.Size}");
-
                     var paths = field.GetAllPaths(new Point(i, j), SearchDirection.All);
 
                     foreach (var path in paths)
@@ -47,6 +49,7 @@ namespace Sandbox
                     }
                 }
             }
+            sw.Stop();
 
             Console.WriteLine("Top10:");
             foreach (var item in unique.OrderByDescending(x => x.Length).Take(10))
@@ -54,7 +57,7 @@ namespace Sandbox
                 Console.WriteLine(item);
             }
 
-            Console.WriteLine("-all-");
+            Console.WriteLine($"-all- ({sw.ElapsedMilliseconds})");
             Console.ReadLine();
         }
 

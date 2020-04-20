@@ -72,14 +72,6 @@ namespace WordGames.Core.Tests
             AssertPointSequencesAreEqual(expectedNeighbours, actualNeighbours);
         }
 
-        private void AssertPointSequencesAreEqual(Point[] points1, Point[] points2)
-        {
-            var expected = new HashSet<Point>(points1);
-            var actual = new HashSet<Point>(points2);
-
-            Assert.IsTrue(expected.SetEquals(actual));
-        }
-
         [TestMethod]
         public void PointZeroInsideField3x3()
         {
@@ -110,6 +102,14 @@ namespace WordGames.Core.Tests
             Point point = new Point(2, 3);
 
             Assert.IsTrue(point.IsInsideField(3, 4));
+        }
+
+        private void AssertPointSequencesAreEqual(Point[] points1, Point[] points2)
+        {
+            var expected = new HashSet<Point>(points1);
+            var actual = new HashSet<Point>(points2);
+
+            Assert.IsTrue(expected.SetEquals(actual));
         }
     }
 }

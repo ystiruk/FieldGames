@@ -7,7 +7,7 @@ namespace WordGames.Core
 {
     public class WordDictionary : IWordProvider
     {
-        private const string _alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+        private readonly Dictionary<char, List<string>> _wordsByLetter;
 
         public List<string> Words { get; }
 
@@ -18,16 +18,29 @@ namespace WordGames.Core
             using (var sReader = new StreamReader(path, Encoding.UTF8))
                 while (!sReader.EndOfStream)
                     Words.Add(sReader.ReadLine());
+            
+            Words.Sort();
+
+            _wordsByLetter = Words
+                .GroupBy(x => x[0])
+                .ToDictionary(k => k.Key, v => v.OrderBy(x => x).ToList());
         }
 
         public bool Contains(string word)
         {
-            return Words.Contains(word);
+            var foundIndex = Words.BinarySearch(word);
+            return (foundIndex >= 0);
         }
 
         public bool StartsWith(string prefix)
         {
-            return Words.Any(w => w.StartsWith(prefix));
+            char firstLetter = prefix[0];
+
+            List<string> words;
+            if (!_wordsByLetter.TryGetValue(firstLetter, out words))
+                return false;
+
+            return words.Any(w => w.StartsWith(prefix));
         }
     }
 }
