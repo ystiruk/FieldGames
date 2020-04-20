@@ -79,5 +79,37 @@ namespace WordGames.Core.Tests
 
             Assert.IsTrue(expected.SetEquals(actual));
         }
+
+        [TestMethod]
+        public void PointZeroInsideField3x3()
+        {
+            Point point = Point.Zero;
+
+            Assert.IsTrue(point.IsInsideField(3, 3));
+        }
+
+        [TestMethod]
+        public void PointX2Y2InsideField3x3()
+        {
+            Point point = new Point(2, 2);
+
+            Assert.IsTrue(point.IsInsideField(3, 3));
+        }
+
+        [TestMethod]
+        public void PointX3Y2InsideField4x3()
+        {
+            Point point = new Point(3, 2);
+
+            Assert.IsTrue(point.IsInsideField(4, 3));
+        }
+
+        [TestMethod]
+        public void PointX2Y3InsideField3x4()
+        {
+            Point point = new Point(2, 3);
+
+            Assert.IsTrue(point.IsInsideField(3, 4));
+        }
     }
 }
