@@ -46,7 +46,6 @@
     <Compile Include="IGame.cs" />
     <Compile Include="IPlayer.cs" />
     <Compile Include="Path.cs" />
-    <Compile Include="Player.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="PointExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

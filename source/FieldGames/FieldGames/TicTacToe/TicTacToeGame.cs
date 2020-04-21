@@ -6,15 +6,36 @@ namespace FieldGames.TicTacToe
 {
     public class TicTacToeGame : IGame<Symbol>
     {
-        public int MaxPlayers { get { return 2; } }
+        private ICollection<IPlayer> _players;
 
-        public ICollection<IPlayer> Players => new List<IPlayer>();
+        public IField<Symbol> Field { get; }
 
-        public IField<Symbol> Field => Field;
-
-        public void Act(IPlayer player, Action action)
+        public TicTacToeGame()
         {
-            throw new NotImplementedException();
+            Field = new TicTacToeField();
+            _players = new List<IPlayer>();
+        }
+
+        public void AddPlayer(IPlayer player)
+        {
+            _players.Add(player);
+            player.SetGame(this);
+        }
+
+        static char[] map = { ' ', 'x', 'o' };
+
+        public void Render()
+        {
+            Console.WriteLine("- - - - -");
+            for (int i = 0; i < Field.Height; i++)
+            {
+                for (int j = 0; j < Field.Width; j++)
+                {
+                    Console.Write($"{map[(int)Field[i, j]]} ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("- - - - -");
         }
     }
 }
