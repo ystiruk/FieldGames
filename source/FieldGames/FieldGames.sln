@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{5B3790E4-16BF-443B-9016-F9F8318B817C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordGames.Core", "WordGames.Core\WordGames.Core.csproj", "{DC7CDA0A-FC2B-4CE7-8CE2-D6B6A54E1EF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldGames.Core", "FieldGames.Core\FieldGames.Core.csproj", "{DC7CDA0A-FC2B-4CE7-8CE2-D6B6A54E1EF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordGames.Core.Tests", "..\..\test\WordGames\WordGames.Core.Tests\WordGames.Core.Tests.csproj", "{712997D2-7228-4D86-B77E-06BFA22BA6CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldGames.Core.Tests", "..\..\test\FieldGames\FieldGames.Core.Tests\FieldGames.Core.Tests.csproj", "{712997D2-7228-4D86-B77E-06BFA22BA6CE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F53B21B9-F2AB-4803-BD8A-43DA90DD6CE0}"
 EndProject

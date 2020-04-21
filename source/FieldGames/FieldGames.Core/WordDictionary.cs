@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace WordGames.Core
+namespace FieldGames.Core
 {
     public class WordDictionary : IWordProvider
     {

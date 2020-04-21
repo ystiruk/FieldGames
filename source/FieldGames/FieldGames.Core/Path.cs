@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace WordGames.Core
+namespace FieldGames.Core
 {
     public class Path : IEnumerable<Point>
     {

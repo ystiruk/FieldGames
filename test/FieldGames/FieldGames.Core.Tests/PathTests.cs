@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 
-namespace WordGames.Core.Tests
+namespace FieldGames.Core.Tests
 {
     [TestClass]
     public class PathTests

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WordGames.Core
+namespace FieldGames.Core
 {
     public struct Point : IEquatable<Point>
     {

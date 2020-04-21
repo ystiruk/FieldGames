@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WordGames.Core.Tests
+namespace FieldGames.Core.Tests
 {
     [TestClass]
     public class FieldTests

@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace WordGames.Core.Tests
+namespace FieldGames.Core.Tests
 {
     [TestClass]
     public class PointTests

@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Text;
-using WordGames.Core;
+using FieldGames.Core;
 using System.Diagnostics;
 
 namespace Sandbox

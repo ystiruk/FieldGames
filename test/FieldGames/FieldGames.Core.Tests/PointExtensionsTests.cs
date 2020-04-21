@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace WordGames.Core.Tests
+namespace FieldGames.Core.Tests
 {
     [TestClass]
     public class PointExtensionsTests

@@ -2,12 +2,12 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("WordGames.Core.Tests")]
+[assembly: AssemblyTitle("FieldGames.Core.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WordGames.Core.Tests")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyProduct("FieldGames.Core.Tests")]
+[assembly: AssemblyCopyright("Copyright © 2020 Andrey Kuritsyn")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
