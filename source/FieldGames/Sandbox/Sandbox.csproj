@@ -56,7 +56,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WordGames.Core\FieldGames.Core.csproj">
+    <ProjectReference Include="..\FieldGames.Core\FieldGames.Core.csproj">
       <Project>{dc7cda0a-fc2b-4ce7-8ce2-d6b6a54e1ef8}</Project>
       <Name>FieldGames.Core</Name>
     </ProjectReference>
