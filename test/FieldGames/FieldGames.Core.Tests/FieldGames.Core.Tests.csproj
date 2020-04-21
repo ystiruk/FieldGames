@@ -50,7 +50,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FieldTests.cs" />
     <Compile Include="PathTests.cs" />
     <Compile Include="PointExtensionsTests.cs" />
     <Compile Include="PointTests.cs" />

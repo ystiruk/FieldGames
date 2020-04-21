@@ -1,4 +1,4 @@
-﻿namespace FieldGames.Core
+﻿namespace FieldGames.WordByWord
 {
     internal class AnyWordProvider : IWordProvider
     {

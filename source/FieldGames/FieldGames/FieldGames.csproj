@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DC7CDA0A-FC2B-4CE7-8CE2-D6B6A54E1EF8}</ProjectGuid>
+    <ProjectGuid>{DD623E97-6BFA-43AB-919F-0365C28C30B8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FieldGames.Core</RootNamespace>
-    <AssemblyName>FieldGames.Core</AssemblyName>
+    <RootNamespace>FieldGames</RootNamespace>
+    <AssemblyName>FieldGames</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,16 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Field.cs" />
-    <Compile Include="IField.cs" />
-    <Compile Include="IGame.cs" />
-    <Compile Include="IPlayer.cs" />
-    <Compile Include="Path.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="Point.cs" />
-    <Compile Include="PointExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchDirection.cs" />
+    <Compile Include="TicTacToe\TicTacToeField.cs" />
+    <Compile Include="TicTacToe\TicTacToeGame.cs" />
+    <Compile Include="TicTacToe\TSymbol.cs" />
+    <Compile Include="WordByWord\AnyWordProvider.cs" />
+    <Compile Include="WordByWord\IWordProvider.cs" />
+    <Compile Include="WordByWord\WordByWordField.cs" />
+    <Compile Include="WordByWord\WordDictionary.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FieldGames.Core\FieldGames.Core.csproj">
+      <Project>{dc7cda0a-fc2b-4ce7-8ce2-d6b6a54e1ef8}</Project>
+      <Name>FieldGames.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

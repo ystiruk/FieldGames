@@ -4,15 +4,33 @@ using System.Collections.Generic;
 using System.Text;
 using FieldGames.Core;
 using System.Diagnostics;
+using FieldGames.WordByWord;
+using FieldGames.TicTacToe;
 
 namespace Sandbox
 {
     class Program
     {
-        static string data = "ниваптетьранмозкоысаерьтп";//"слмзоваон";
-
         static void Main(string[] args)
         {
+            PlayTicTacToeGame();
+        }
+
+        static void PlayTicTacToeGame()
+        {
+            TicTacToeGame game = new TicTacToeGame();
+
+            Player player1 = new Player("Vasya");
+            Player player2 = new Player("Petya");
+
+            game.Players.Add(player1);
+            game.Players.Add(player2);
+        }
+
+        static void _Main(string[] args)
+        {
+            string data = "ниваптетьранмозкоысаерьтп";//"слмзоваон";
+            
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.Unicode;
 
@@ -22,7 +40,7 @@ namespace Sandbox
             Console.Write("Letters: ");
             //data = Console.ReadLine();
 
-            Field field = new Field(data, russianNouns);
+            WordByWordField field = new WordByWordField(data, russianNouns);
 
             Console.WriteLine(field);
 

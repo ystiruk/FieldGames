@@ -60,6 +60,10 @@
       <Project>{dc7cda0a-fc2b-4ce7-8ce2-d6b6a54e1ef8}</Project>
       <Name>FieldGames.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FieldGames\FieldGames.csproj">
+      <Project>{DD623E97-6BFA-43AB-919F-0365C28C30B8}</Project>
+      <Name>FieldGames</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

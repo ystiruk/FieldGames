@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldGames.Core.Tests", "..
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F53B21B9-F2AB-4803-BD8A-43DA90DD6CE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldGames", "FieldGames\FieldGames.csproj", "{DD623E97-6BFA-43AB-919F-0365C28C30B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{712997D2-7228-4D86-B77E-06BFA22BA6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{712997D2-7228-4D86-B77E-06BFA22BA6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{712997D2-7228-4D86-B77E-06BFA22BA6CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD623E97-6BFA-43AB-919F-0365C28C30B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD623E97-6BFA-43AB-919F-0365C28C30B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD623E97-6BFA-43AB-919F-0365C28C30B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD623E97-6BFA-43AB-919F-0365C28C30B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
