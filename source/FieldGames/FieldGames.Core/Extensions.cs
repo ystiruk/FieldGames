@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace FieldGames.Core
 {
-    public static class Extensions
+    public static class ExtensionMethods
     {
-        public static IEnumerable<T> Switch<T>(this IList<T> source)
+        public static IEnumerable<T> Circle<T>(this IList<T> source)
         {
             int i = 0;
             while(true)

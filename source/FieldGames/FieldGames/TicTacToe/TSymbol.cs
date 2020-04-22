@@ -1,6 +1,6 @@
 ﻿namespace FieldGames.TicTacToe
 {
-    public enum Symbol
+    public enum TSymbol
     {
         Empty = 0,
         Cross,

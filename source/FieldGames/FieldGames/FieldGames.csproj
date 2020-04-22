@@ -42,9 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TicTacToe\Player.cs" />
-    <Compile Include="TicTacToe\TicTacToeField.cs" />
-    <Compile Include="TicTacToe\TicTacToeGame.cs" />
+    <Compile Include="TicTacToe\TPlayer.cs" />
+    <Compile Include="TicTacToe\TField.cs" />
+    <Compile Include="TicTacToe\TGame.cs" />
     <Compile Include="TicTacToe\TSymbol.cs" />
     <Compile Include="WordByWord\AnyWordProvider.cs" />
     <Compile Include="WordByWord\IWordProvider.cs" />

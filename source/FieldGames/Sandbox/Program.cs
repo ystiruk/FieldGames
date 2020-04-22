@@ -5,7 +5,7 @@ using System.Text;
 using FieldGames.Core;
 using System.Diagnostics;
 using FieldGames.WordByWord;
-using TTT = FieldGames.TicTacToe;
+using FieldGames.TicTacToe;
 
 namespace Sandbox
 {
@@ -18,23 +18,19 @@ namespace Sandbox
 
         static void PlayTicTacToeGame()
         {
-            TTT.TicTacToeGame game = new TTT.TicTacToeGame();
+            TGame game = new TGame();
 
-            TTT.Player player1 = new TTT.Player("Vasya");
-            TTT.Player player2 = new TTT.Player("Petya");
+            game.AddPlayers("Vasya", "Petya");
 
-            game.AddPlayer(player1);
-            game.AddPlayer(player2);
+            while(!game.IsEnd)
+            {
+                //Console.Clear();
 
-            game.Render();
+                game.Render();
+                TPlayer player = game.NextPlayer;
 
-            player1.Set(TTT.Symbol.Cross, 1, 1);
-
-            game.Render();
-
-            player2.Set(TTT.Symbol.Nought, 1, 2);
-
-            game.Render();
+                player.Act();
+            }
         }
 
         static void _Main(string[] args)

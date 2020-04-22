@@ -6,15 +6,15 @@ using System.Linq;
 namespace FieldGames.Core.Tests
 {
     [TestClass]
-    public class ExtensionsTests
+    public class ExtensionMethodsTests
     {
         [TestMethod]
-        public void SwitchCollectionWithOneItemReturnsThatItem()
+        public void CircleCollectionWithOneItemReturnsThatItem()
         {
             IList<int> source = new List<int>() { 1 };
             IList<int> expectedSequence = new List<int>() { 1, 1, 1, 1, 1 };
 
-            var switcher = source.Switch();
+            var switcher = source.Circle();
 
             var actualSequence = switcher.Take(5);
 
@@ -22,11 +22,11 @@ namespace FieldGames.Core.Tests
         }
 
         [TestMethod]
-        public void SwitchCollectionWithThreeItemsReturnsTheseItemsInRightOrder()
+        public void CircleCollectionWithThreeItemsReturnsTheseItemsInRightOrder()
         {
             IList<int> source = new List<int>() { 1, 2, 3 };
 
-            var switcher = source.Switch();
+            var switcher = source.Circle();
 
             var actualSequence = switcher.Take(3);
 
@@ -34,7 +34,7 @@ namespace FieldGames.Core.Tests
         }
 
         [TestMethod]
-        public void SwitchSupportsRemoveElementFromCollection()
+        public void CircleSupportsRemoveElementFromCollection()
         {
             IList<int> source = new List<int>() { 1, 2, 3 };
             IList<int> expectedSequence = new List<int>() {
@@ -42,7 +42,7 @@ namespace FieldGames.Core.Tests
                 1, 3
             };
 
-            var switcher = source.Switch();
+            var switcher = source.Circle();
 
             var actualSequence = new List<int>();
             actualSequence.AddRange(switcher.Take(3));
@@ -53,7 +53,7 @@ namespace FieldGames.Core.Tests
         }
 
         [TestMethod]
-        public void SwitchSupportsAddElementToCollection()
+        public void CircleSupportsAddElementToCollection()
         {
             IList<int> source = new List<int>() { 1, 2, 3 };
             IList<int> expectedSequence = new List<int>() {
@@ -61,7 +61,7 @@ namespace FieldGames.Core.Tests
                 1, 2, 3, 4
             };
 
-            var switcher = source.Switch();
+            var switcher = source.Circle();
 
             List<int> actualSequence = new List<int>();
             actualSequence.AddRange(switcher.Take(3));
@@ -72,7 +72,7 @@ namespace FieldGames.Core.Tests
         }
 
         [TestMethod]
-        public void SwitchSupportsInsertElementToCollection()
+        public void CircleSupportsInsertElementToCollection()
         {
             IList<int> source = new List<int>() { 1, 2, 3 };
             IList<int> expectedSequence = new List<int>() {
@@ -80,7 +80,7 @@ namespace FieldGames.Core.Tests
                 1, 0, 2, 3
             };
 
-            var switcher = source.Switch();
+            var switcher = source.Circle();
 
             var actualSequence = new List<int>();
             actualSequence.AddRange(switcher.Take(3));

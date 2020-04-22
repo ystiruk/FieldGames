@@ -44,7 +44,6 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="Field.cs" />
     <Compile Include="IField.cs" />
-    <Compile Include="IGame.cs" />
     <Compile Include="IPlayer.cs" />
     <Compile Include="Path.cs" />
     <Compile Include="Point.cs" />
