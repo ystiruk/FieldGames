@@ -11,11 +11,10 @@ namespace FieldGames.Core
             get => field[row, column];
             set => field[row, column] = value;
         }
-
-        public int Width => field.GetLength(1);
         public int Height => field.GetLength(0);
+        public int Width => field.GetLength(1);
 
-        protected Field(int width, int height)
+        protected Field(int height, int width)
         {
             if (width <= 0) throw new ArgumentException(nameof(width));
             if (height <= 0) throw new ArgumentException(nameof(height));

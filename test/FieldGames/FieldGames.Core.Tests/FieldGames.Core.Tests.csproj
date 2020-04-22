@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExtensionMethodsTests.cs" />
+    <Compile Include="FieldTests.cs" />
     <Compile Include="PathTests.cs" />
     <Compile Include="PointExtensionsTests.cs" />
     <Compile Include="PointTests.cs" />
