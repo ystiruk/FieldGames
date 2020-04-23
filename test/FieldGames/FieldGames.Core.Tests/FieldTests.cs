@@ -1,9 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FieldGames.Core.Tests
 {
@@ -13,6 +9,16 @@ namespace FieldGames.Core.Tests
         class TestIntField : Field<int>
         {
             public TestIntField(int height, int width) : base(height, width) { }
+        }
+        class TestCharField : Field<char>
+        {
+            protected TestCharField(int height, int width) : base(height, width) { }
+            public TestCharField(int height, int width, string content) : this(height, width)
+            {
+                for (int i = 0; i < height; i++)
+                    for (int j = 0; j < width; j++)
+                        field[i, j] = content[i * width + j];
+            }
         }
 
         [TestMethod]
@@ -43,6 +49,32 @@ namespace FieldGames.Core.Tests
 
             Assert.AreEqual(field[0, 0], 1);
             Assert.AreEqual(field[2, 1], 6);
+        }
+
+        [TestMethod]
+        public void MyTestMethod()
+        {
+            /*
+             h o l a , b 
+             r o ! a b b 
+             a r u l e s 
+             */
+            string contents = "hola,bro!abbarules";
+            TestCharField field = new TestCharField(3, 6, contents);
+
+            Path holaPathV1 = new Path()
+            {
+                Point.Zero, new Point(0, 1), new Point(0, 2), new Point(0, 3)
+            };
+            Path holaPathV2 = new Path()
+            {
+                Point.Zero, new Point(1, 1), new Point(0, 2), new Point(0, 3)
+            };
+
+            string sequenceV1 = new string(field.GetElements(holaPathV1).ToArray());
+            string sequenceV2 = new string(field.GetElements(holaPathV2).ToArray());
+
+            Assert.AreEqual(sequenceV1, sequenceV2);
         }
     }
 }

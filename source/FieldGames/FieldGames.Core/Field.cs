@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FieldGames.Core
 {
@@ -20,6 +21,16 @@ namespace FieldGames.Core
             if (height <= 0) throw new ArgumentException(nameof(height));
 
             field = new T[height, width];
+        }
+
+        public IEnumerable<T> GetElements(Path path)
+        {
+            List<T> sequence = new List<T>(path.Length);
+            
+            foreach (var point in path)
+                sequence.Add(field[point.X, point.Y]);
+            
+            return sequence;
         }
     }
 }
