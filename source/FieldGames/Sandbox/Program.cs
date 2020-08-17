@@ -13,29 +13,7 @@ namespace Sandbox
     {
         static void Main(string[] args)
         {
-            PlayTicTacToeGame();
-        }
-
-        static void PlayTicTacToeGame()
-        {
-            TGame game = new TGame();
-
-            game.AddPlayers("Vasya", "Petya");
-
-            while(!game.IsEnd)
-            {
-                //Console.Clear();
-
-                game.Render();
-                TPlayer player = game.NextPlayer;
-
-                player.Act();
-            }
-        }
-
-        static void _Main(string[] args)
-        {
-            string data = "ниваптетьранмозкоысаерьтп";//"слмзоваон";
+            string data = "ниваптетьранмозкоысаерьтп";
             
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.Unicode;
@@ -43,7 +21,7 @@ namespace Sandbox
             WordDictionary russianNouns = new WordDictionary(@"..\..\..\..\..\data\nouns.txt");
 
             //Field field = Field.FromFile(@"..\..\..\..\..\data\fields\field1.txt", russianNouns);
-            Console.Write("Letters: ");
+            //Console.Write("Letters: ");
             //data = Console.ReadLine();
 
             WordByWordField field = new WordByWordField(data, russianNouns);
@@ -81,7 +59,7 @@ namespace Sandbox
                 Console.WriteLine(item);
             }
 
-            Console.WriteLine($"-all- ({sw.ElapsedMilliseconds})");
+            Console.WriteLine($"-all- ({sw.ElapsedMilliseconds} ms.)");
             Console.ReadLine();
         }
 
