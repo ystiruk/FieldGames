@@ -10,8 +10,8 @@ namespace FieldGames.Core.Tests
         [TestMethod]
         public void CircleCollectionWithOneItemReturnsThatItem()
         {
-            IList<int> source = new List<int>() { 1 };
-            IList<int> expectedSequence = new List<int>() { 1, 1, 1, 1, 1 };
+            var source = new List<int>() { 1 };
+            var expectedSequence = new List<int>() { 1, 1, 1, 1, 1 };
 
             var switcher = source.Circle();
 
@@ -23,7 +23,7 @@ namespace FieldGames.Core.Tests
         [TestMethod]
         public void CircleCollectionWithThreeItemsReturnsTheseItemsInRightOrder()
         {
-            IList<int> source = new List<int>() { 1, 2, 3 };
+            var source = new List<int>() { 1, 2, 3 };
 
             var switcher = source.Circle();
 
@@ -35,8 +35,8 @@ namespace FieldGames.Core.Tests
         [TestMethod]
         public void CircleSupportsRemoveElementFromCollection()
         {
-            IList<int> source = new List<int>() { 1, 2, 3 };
-            IList<int> expectedSequence = new List<int>() {
+            var source = new List<int>() { 1, 2, 3 };
+            var expectedSequence = new List<int>() {
                 1, 2, 3,
                 1, 3
             };
@@ -54,8 +54,8 @@ namespace FieldGames.Core.Tests
         [TestMethod]
         public void CircleSupportsAddElementToCollection()
         {
-            IList<int> source = new List<int>() { 1, 2, 3 };
-            IList<int> expectedSequence = new List<int>() {
+            var source = new List<int>() { 1, 2, 3 };
+            var expectedSequence = new List<int>() {
                 1, 2, 3,
                 1, 2, 3, 4
             };
@@ -73,8 +73,8 @@ namespace FieldGames.Core.Tests
         [TestMethod]
         public void CircleSupportsInsertElementToCollection()
         {
-            IList<int> source = new List<int>() { 1, 2, 3 };
-            IList<int> expectedSequence = new List<int>() {
+            var source = new List<int>() { 1, 2, 3 };
+            var expectedSequence = new List<int>() {
                 1, 2, 3,
                 1, 0, 2, 3
             };
