@@ -6,6 +6,7 @@ using FieldGames.Core;
 using System.Diagnostics;
 using FieldGames.WordByWord;
 using FieldGames.TicTacToe;
+using System.Threading.Tasks;
 
 namespace Sandbox
 {
@@ -33,9 +34,10 @@ namespace Sandbox
 
             HashSet<string> unique = new HashSet<string>();
             int cc = 1;
+
             for (int i = 0; i < field.Size; i++)
             {
-                for (int j = 0; j < field.Size; j++)
+                Parallel.For(0, field.Size, (j) =>
                 {
                     var paths = field.GetAllPaths(new Point(i, j), SearchDirection.All);
 
@@ -43,13 +45,10 @@ namespace Sandbox
                     {
                         var word = field.GetWord(path);
 
-                        //unique.Add(word);
                         if (unique.Add(word))
                             Console.WriteLine(cc++ + ") " + word);
-
-                        //Console.WriteLine(field.VisualizeWord(path));
                     }
-                }
+                });
             }
             sw.Stop();
 
